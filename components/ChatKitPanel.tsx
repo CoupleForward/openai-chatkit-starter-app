@@ -371,12 +371,7 @@ export function ChatKitPanel({
                 : "block h-full w-full"
             } bg-[#15191C] text-[#EDEDED]`}
           />
-        </div>
-
-          if (blockingError) {
-    console.error("ChatKit blockingError:", blockingError);
-  }
-
+        </div>        
   return (
     ...
 
