@@ -340,22 +340,22 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="flex w-full justify-center bg-[#05070A] px-4 py-10">
-      <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
-        {/* Header: image + title + subtext */}
+            {/* Header: compass icon + title + subtext */}
         <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
-          <img
-            src="/cf-roadmap-header.png"
-            alt="The Way Forward Roadmap"
-            className="h-16 w-16 rounded-full border border-[#D4AF37] object-cover"
-          />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D4AF37] bg-[#15191C]">
+            <span className="text-xl" aria-hidden="true">
+              🧭
+            </span>
+            <span className="sr-only">Compass icon</span>
+          </div>
           <div>
             <h2 className="text-lg font-semibold text-slate-50">
               Mapping My Story
             </h2>
             <p className="mt-1 text-sm text-slate-400">
-              Trigger ↓ Loop ↓ Survival strategy ↓ Core need. Let&apos;s map
-              what your nervous system has been trying to do for you.
+              Mapping My Story helps you prepare for an intentional
+              conversation with your partner using Couple Forward's
+              proprietary WHEN|THEN|THIS approach.
             </p>
           </div>
         </div>
