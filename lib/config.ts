@@ -45,23 +45,22 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   return {
     color: {
       grayscale: {
-        // neutral, slightly warm charcoal – not teal
-        hue: 210,
-        tint: 4,
-        shade: isDark ? -3 : -1,
+        // TEMP: extreme green to prove this is what drives the box color
+        hue: 120,         // green
+        tint: 6,
+        shade: isDark ? -3 : 1,
       },
       accent: {
-        // Couple Forward gold used for buttons, links, highlights
-        primary: "#D4AF37",
+        primary: "#D4AF37", // your gold
         level: 3,
       },
       surface: {
-        // main widget + inner surfaces (chat area, composer, etc.)
         background: isDark ? "#15191C" : "#F9F9F9",
-        foreground: isDark ? "#111418" : "#00FFFF",
+        foreground: isDark ? "#111418" : "#FFFFFF",
       },
     },
-    radius: "round",    // rounded but not full pill
-    density: "spacious" // more breathing room, less cramped
+    radius: "round",
+    density: "spacious",
   };
 };
+
