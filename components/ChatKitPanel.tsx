@@ -373,9 +373,6 @@ export function ChatKitPanel({
     }
   />
 </div>
-
- }
-          />
           <ErrorOverlay
             error={blockingError}
             fallbackMessage={
