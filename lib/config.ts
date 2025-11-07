@@ -11,7 +11,7 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
     icon: "compass",
     label: "Map a recent conflict with my partner",
     prompt:
-      "Help me map a recent conflict with my partner using WHEN ↓ THEN ↓ THIS ↓ PRIMARY EMOTIONS ↓ UNMET CORE NEEDS",
+      "Help me map a recent conflict with my partner using WHEN ↓ THEN ↓ THIS ↓ PRIMARY EMOTIONS ↓ UNMET CORE NEEDS.",
   },
   {
     icon: "profile-card",
@@ -21,27 +21,27 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
   },
   {
     icon: "notebook-pencil",
-    label: "Need to preapre for a repair conversation",
+    label: "Need to prepare for a repair conversation",
     prompt:
       "Help me name each of my survival strategies and how they keep our cycle going.",
   },
   {
     icon: "lightbulb",
-    label: "I need help understanding myself in this conlfict",
-    prompt:
-      "Given our pattern, help me understand my deeper layers.",
+    label: "I need help understanding myself in this conflict",
+    prompt: "Given our pattern, help me understand my deeper layers.",
   },
 ];
 
 export const PLACEHOLDER_INPUT =
-  "Help me map a conflict or pattern using MApping My Story agent.";
+  "Help me map a conflict or pattern using Mapping My Story agent.";
 
 export const GREETING =
   "Think of this as a trail guide, not a judge. Where do you want to start?";
 
 // Couple Forward theme ↓
-eexport const getThemeConfig = (theme: ColorScheme): ThemeOption => {
+export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   const isDark = theme === "dark";
+
   return {
     color: {
       grayscale: {
@@ -64,6 +64,3 @@ eexport const getThemeConfig = (theme: ColorScheme): ThemeOption => {
     radius: "soft",
   };
 };
-
-
-
