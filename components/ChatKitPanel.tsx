@@ -339,7 +339,17 @@ export function ChatKitPanel({
       workflowId: WORKFLOW_ID,
     });
   }
-
+{/* Header: compass icon + title */}
+<div className="flex flex-col items-center justify-center py-4 bg-transparent">
+  <img
+    src="https://static.showit.co/file/qxI8FQWrOQrBd3utrSfNUQ/320745/agnetcompasscoupleforward.png"
+    alt="Couple Forward Compass"
+    className="h-16 w-16 mb-2"
+  />
+  <h2 className="text-lg font-semibold text-[#D4AF37] tracking-wide">
+    Mapping My Story
+  </h2>
+</div>
   return (
     <div className="relative pb-8 flex h-[90vh] w-full rounded-2xl flex-col overflow-hidden bg-white shadow-sm transition-colors dark:bg-slate-900">
       <ChatKit
