@@ -360,36 +360,29 @@ export function ChatKitPanel({
             </p>
           </div>
         </div>
+<div className="relative flex-1">
+  <ChatKit
+    key={widgetInstanceKey}
+    control={chatkit.control}
+    className={
+      blockingError || isInitializingSession
+        ? "pointer-events-none opacity-0"
+        : "block h-full w-full"
+    }
+  />
 
-        <div className="relative flex-1">
-          <ChatKit
-            key={widgetInstanceKey}
-            control={chatkit.control}
-            className={`${
-              blockingError || isInitializingSession
-                ? "pointer-events-none opacity-0"
-                : "block h-full w-full"
-            } bg-[#15191C] text-[#EDEDED]`}
-          />
-        </div>        
-  return (
-    ...
-        <ErrorOverlay
-  error={blockingError}
-  fallbackMessage={
-    blockingError
-      ? JSON.stringify(blockingError, null, 2)
-      : isInitializingSession
+  <ErrorOverlay
+    error={blockingError}
+    fallbackMessage={
+      isInitializingSession
         ? "Initializing your Mapping My Story session…"
         : "Something went wrong while loading the chat."
-  }
-/>
-      </div>
-    </div>
-  );
+    }
+  />
+</div>
+</div>
+);
 }
-
-
 function extractErrorDetail(
   payload: Record<string, unknown> | undefined,
   fallback: string
