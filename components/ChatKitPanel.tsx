@@ -373,8 +373,13 @@ export function ChatKitPanel({
           />
         </div>
 
-        {blockingError &&
-          console.error("ChatKit blockingError:", blockingError)}
+          if (blockingError) {
+    console.error("ChatKit blockingError:", blockingError);
+  }
+
+  return (
+    ...
+
 
         <ErrorOverlay
           error={blockingError}
