@@ -340,7 +340,7 @@ export function ChatKitPanel({
   }
 
   return (
-            {/* Header: compass icon + title + subtext */}
+          {/* Header: compass icon + title + subtext */}
         <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D4AF37] bg-[#15191C]">
             <span className="text-xl" aria-hidden="true">
