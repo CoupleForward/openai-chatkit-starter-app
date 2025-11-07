@@ -193,7 +193,6 @@ export function ChatKitPanel({
           body: JSON.stringify({
             workflow: { id: WORKFLOW_ID },
             chatkit_configuration: {
-              // enable attachments
               file_upload: {
                 enabled: true,
               },
@@ -274,7 +273,6 @@ export function ChatKitPanel({
     composer: {
       placeholder: PLACEHOLDER_INPUT,
       attachments: {
-        // Enable attachments
         enabled: true,
       },
     },
@@ -324,8 +322,6 @@ export function ChatKitPanel({
       processedFacts.current.clear();
     },
     onError: ({ error }: { error: unknown }) => {
-      // Note that Chatkit UI handles errors for your users.
-      // Thus, your app code doesn't need to display errors on UI.
       console.error("ChatKit error", error);
     },
   });
@@ -344,8 +340,8 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="flex w-full justify-center bg-black px-4 py-10">
-      <div className="relative flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
+    <div className="flex w-full justify-center bg-[#05070A] px-4 py-10">
+      <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
         {/* Header: image + title + subtext */}
         <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
           <img
@@ -439,4 +435,5 @@ function extractErrorDetail(
 
   return fallback;
 }
+
 
