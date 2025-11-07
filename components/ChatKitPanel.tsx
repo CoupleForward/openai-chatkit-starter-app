@@ -374,16 +374,16 @@ export function ChatKitPanel({
         </div>        
   return (
     ...
-
-
         <ErrorOverlay
-          error={blockingError}
-          fallbackMessage={
-            isInitializingSession
-              ? "Initializing your Mapping My Story session…"
-              : "Something went wrong while loading the chat."
-          }
-        />
+  error={blockingError}
+  fallbackMessage={
+    blockingError
+      ? JSON.stringify(blockingError, null, 2)
+      : isInitializingSession
+        ? "Initializing your Mapping My Story session…"
+        : "Something went wrong while loading the chat."
+  }
+/>
       </div>
     </div>
   );
