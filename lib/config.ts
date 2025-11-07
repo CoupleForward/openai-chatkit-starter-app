@@ -40,36 +40,23 @@ export const GREETING =
   "Think of this as a trail guide, not a judge. Where do you want to start?";
 
 // Couple Forward theme ↓
-export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
-  const isDark = theme === "dark";
+export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
+  color: {
+    grayscale: {
+      // darker background for dark mode, softer for light
+      hue: 220,
+      tint: 6,
+      shade: theme === "dark" ? -5 : -2,
+    },
+    accent: {
+      // Couple Forward gold
+      primary: "#D4AF37",
+      level: 2,
+    },
+  },
+  radius: "soft",
+  // you can add more supported theme options later if needed
+});
 
-  return {
-    color: {
-      accent: {
-        primary: "#D4AF37", // Couple Forward gold
-        level: 2,
-      },
-      surface: {
-        background: isDark ? "#15191C" : "#F5F5F5",
-        foreground: isDark ? "#1E2328" : "#FFFFFF",
-      },
-      border: {
-        subtle: isDark ? "#1E2328" : "#E2E4E7",
-      },
-      text: {
-        primary: isDark ? "#F5F5F5" : "#15191C",
-        secondary: isDark ? "#B0B4B9" : "#4B5563",
-      },
-    },
-    radius: "soft",
-    density: "normal",
-    typography: {
-      baseSize: 15,
-      fontFamily:
-        '"OpenAI Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
-      fontFamilyMono:
-        'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace',
-    },
-  };
-};
+
 
