@@ -40,23 +40,29 @@ export const GREETING =
   "Think of this as a trail guide, not a judge. Where do you want to start?";
 
 // Couple Forward theme ↓
-export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
-  color: {
-    grayscale: {
-      // darker background for dark mode, softer for light
-      hue: 220,
-      tint: 6,
-      shade: theme === "dark" ? -4 : -2,
+export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
+  const isDark = theme === "dark";
+
+  return {
+    color: {
+      grayscale: {
+        hue: 220,
+        tint: 6,
+        shade: isDark ? -4 : -1,
+      },
+      accent: {
+        primary: "#D4AF37", // gold
+        level: 2,
+      },
+      surface: {
+        foreground: isDark ? "#EAEAEA" : "#1E1E1E",
+        background: isDark ? "#15191C" : "#F9F9F9",
+      },
     },
-    accent: {
-      // Couple Forward gold
-      primary: "#D4AF37",
-      level: 2,
-    },
-  },
-  radius: "soft",
-  // you can add more supported theme options later if needed
-});
+    radius: "soft",
+  };
+};
+
 
 
 
