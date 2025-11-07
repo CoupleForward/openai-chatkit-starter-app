@@ -45,17 +45,17 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   return {
     color: {
       grayscale: {
-        // TEMP: extreme green to prove this is what drives the box color
-        hue: 120,         // green
-        tint: 6,
-        shade: isDark ? -3 : 1,
+        // warm, charcoal-ish neutrals
+        hue: 40,          // warm / amber base, kills blue
+        tint: 4,
+        shade: isDark ? -3 : -1,
       },
       accent: {
-        primary: "#D4AF37", // your gold
-        level: 3,
+        primary: "#D4AF37",
+        level: 2,
       },
       surface: {
-        background: isDark ? "#15191C" : "#F9F9F9",
+        background: isDark ? "#15191C" : "#F5F1EB",
         foreground: isDark ? "#111418" : "#FFFFFF",
       },
     },
@@ -63,4 +63,5 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
     density: "spacious",
   };
 };
+
 
