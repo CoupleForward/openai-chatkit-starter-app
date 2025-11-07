@@ -45,8 +45,7 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   return {
     color: {
       grayscale: {
-        // warm, charcoal-ish neutrals
-        hue: 40,          // warm / amber base, kills blue
+        hue: 40,
         tint: 4,
         shade: isDark ? -3 : -1,
       },
@@ -55,7 +54,7 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
         level: 2,
       },
       surface: {
-        background: isDark ? "#15191C" : "#F5F1EB",
+        background: isDark ? "transparent" : "#F5F1EB",  // changed → transparent dark bg
         foreground: isDark ? "#111418" : "#FFFFFF",
       },
     },
@@ -63,5 +62,3 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
     density: "spacious",
   };
 };
-
-
