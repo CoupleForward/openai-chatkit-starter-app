@@ -344,26 +344,49 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="relative pb-8 flex h-[90vh] w-full rounded-2xl flex-col overflow-hidden bg-white shadow-sm transition-colors dark:bg-slate-900">
-      <ChatKit
-        key={widgetInstanceKey}
-        control={chatkit.control}
-        className={
-          blockingError || isInitializingSession
-            ? "pointer-events-none opacity-0"
-            : "block h-full w-full"
-        }
-      />
-      <ErrorOverlay
-        error={blockingError}
-        fallbackMessage={
-          blockingError || !isInitializingSession
-            ? null
-            : "Loading assistant session..."
-        }
-        onRetry={blockingError && errors.retryable ? handleResetChat : null}
-        retryLabel="Restart chat"
-      />
+    <div className="flex w-full justify-center bg-black px-4 py-10">
+      <div className="relative flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
+        {/* Header: image + title + subtext */}
+        <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
+          <img
+            src="/cf-roadmap-header.png"
+            alt="The Way Forward Roadmap"
+            className="h-16 w-16 rounded-full border border-[#D4AF37] object-cover"
+          />
+          <div>
+            <h2 className="text-lg font-semibold text-slate-50">
+              Mapping My Story
+            </h2>
+            <p className="mt-1 text-sm text-slate-400">
+              Trigger ↓ Loop ↓ Survival strategy ↓ Core need. Let&apos;s map
+              what your nervous system has been trying to do for you.
+            </p>
+          </div>
+        </div>
+
+        {/* Chat area */}
+        <div className="relative flex-1">
+          <ChatKit
+            key={widgetInstanceKey}
+            control={chatkit.control}
+            className={
+              blockingError || isInitializingSession
+                ? "pointer-events-none opacity-0"
+                : "block h-full w-full"
+            }
+          />
+          <ErrorOverlay
+            error={blockingError}
+            fallbackMessage={
+              blockingError || !isInitializingSession
+                ? null
+                : "Loading assistant session..."
+            }
+            onRetry={blockingError && errors.retryable ? handleResetChat : null}
+            retryLabel="Restart chat"
+          />
+        </div>
+      </div>
     </div>
   );
 }
@@ -416,3 +439,4 @@ function extractErrorDetail(
 
   return fallback;
 }
+
