@@ -36,7 +36,7 @@ export const PLACEHOLDER_INPUT =
   "Help me map a conflict or pattern using Mapping My Story agent.";
 
 export const GREETING =
-  "Hello, think of me as a trail guide, not a judge. I've been programmed by Couple Forward to help complain without blame! Where would you like to start?";
+  "Hello, think of me as a trail guide, not a judge. I've been programmed by Couple Forward to help you complain without blame! Where would you like to start?";
 
 // Couple Forward theme ↓
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
