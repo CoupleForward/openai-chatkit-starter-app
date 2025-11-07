@@ -39,7 +39,7 @@ openai-chatkit {
   --ck-color-surface-highlight: #1b2026;
 
   /* background behind the widget if ChatKit uses it */
-  --ck-color-background: #05070a;
+  --ck-color-background: transparent !important;
 
   /* text colors */
   --ck-color-text-primary: #f5f5f5;
