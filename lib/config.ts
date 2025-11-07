@@ -46,7 +46,7 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
       // darker background for dark mode, softer for light
       hue: 220,
       tint: 6,
-      shade: theme === "dark" ? -5 : -2,
+      shade: theme === "dark" ? -4 : -2,
     },
     accent: {
       // Couple Forward gold
