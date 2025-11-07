@@ -40,28 +40,25 @@ export const GREETING =
   "Think of this as a trail guide, not a judge. Where do you want to start?";
 
 // Couple Forward theme ↓
-export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
+eexport const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   const isDark = theme === "dark";
-
   return {
     color: {
-      // kill navy tint completely
       grayscale: {
+        // neutral dark gray, less blue
         hue: 210,
         tint: 3,
         shade: isDark ? -3 : -1,
       },
-      // Couple Forward gold
       accent: {
+        // Couple Forward gold
         primary: "#D4AF37",
         level: 2,
       },
-      // override default ChatKit surface colors
       surface: {
-        background: isDark ? "#15191C" : "#F9F9F9", // entire widget bg
-        foreground: isDark ? "#1E2328" : "#FFFFFF", // message container
-        subtle: isDark ? "#0F1114" : "#EEEEEE", // composer background + subtle borders
-        text: isDark ? "#E8E8E8" : "#111111", // ensures readable text
+        // main widget + inner surfaces
+        background: isDark ? "#15191C" : "#F9F9F9",
+        foreground: isDark ? "#111418" : "#FFFFFF",
       },
     },
     radius: "soft",
