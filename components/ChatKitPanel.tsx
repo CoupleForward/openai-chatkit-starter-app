@@ -373,6 +373,9 @@ export function ChatKitPanel({
           />
         </div>
 
+        {blockingError &&
+          console.error("ChatKit blockingError:", blockingError)}
+
         <ErrorOverlay
           error={blockingError}
           fallbackMessage={
