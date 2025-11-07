@@ -341,8 +341,8 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="flex w-full justify-center bg-[#05070A] px-4 py-10">
-      <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
+   <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C]">
+<div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
         <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D4AF37] bg-[#15191C]">
             <span className="text-xl" aria-hidden="true">
@@ -363,14 +363,15 @@ export function ChatKitPanel({
         </div>
 
         <div className="relative flex-1">
-          <ChatKit
-            key={widgetInstanceKey}
-            control={chatkit.control}
-            className={
-              blockingError || isInitializingSession
-                ? "pointer-events-none opacity-0"
-                : "block h-full w-full"
-            }
+  <ChatKit
+    key={widgetInstanceKey}
+    control={chatkit.control}
+    className={`block h-full w-full bg-[#15191C] text-[#EDEDED] ${
+      blockingError || isInitializingSession ? "pointer-events-none opacity-0" : ""
+    }`}
+  />
+</div>
+ }
           />
           <ErrorOverlay
             error={blockingError}
