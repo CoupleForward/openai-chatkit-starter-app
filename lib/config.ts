@@ -45,28 +45,28 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
 
   return {
     color: {
+      // kill navy tint completely
       grayscale: {
-        // neutral dark gray, not navy
         hue: 210,
         tint: 3,
         shade: isDark ? -3 : -1,
       },
+      // Couple Forward gold
       accent: {
-        // Couple Forward gold
         primary: "#D4AF37",
         level: 2,
       },
+      // override default ChatKit surface colors
       surface: {
-        // controls panels, message bubbles, composer background
-        background: isDark ? "#15191C" : "#F5F5F5",
-        foreground: isDark ? "#1E2328" : "#FFFFFF",
+        background: isDark ? "#15191C" : "#F9F9F9", // entire widget bg
+        foreground: isDark ? "#1E2328" : "#FFFFFF", // message container
+        subtle: isDark ? "#0F1114" : "#EEEEEE", // composer background + subtle borders
+        text: isDark ? "#E8E8E8" : "#111111", // ensures readable text
       },
     },
     radius: "soft",
   };
 };
-
-
 
 
 
