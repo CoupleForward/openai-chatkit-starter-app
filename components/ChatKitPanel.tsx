@@ -340,9 +340,9 @@ export function ChatKitPanel({
     });
   }
 
-  return (
-   <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C]">
-<div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C] shadow-sm">
+    return (
+    <div className="flex w-full justify-center bg-[#05070A] px-4 py-10">
+      <div className="relative flex h-[80vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-slate-800 bg-[#15191C]">
         <div className="flex items-center gap-4 border-b border-slate-800 px-6 py-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D4AF37] bg-[#15191C]">
             <span className="text-xl" aria-hidden="true">
@@ -356,38 +356,36 @@ export function ChatKitPanel({
             </h2>
             <p className="mt-1 text-sm text-slate-400">
               Mapping My Story helps you prepare for an intentional conversation
-              with your partner using Couple Forward&apos;s proprietary
-              WHEN|THEN|THIS approach.
+              with your partner using Couple Forward&apos;s proprietary WHEN | THEN | THIS approach.
             </p>
           </div>
         </div>
 
-       <div className="relative flex-1">
-  <ChatKit
-    key={widgetInstanceKey}
-    control={chatkit.control}
-    className={
-      (blockingError || isInitializingSession
-        ? "pointer-events-none opacity-0 "
-        : "block h-full w-full ") + "bg-[#15191C] text-[#EDEDED]"
-    }
-  />
-</div>
-          <ErrorOverlay
-            error={blockingError}
-            fallbackMessage={
-              blockingError || !isInitializingSession
-                ? null
-                : "Loading assistant session..."
-            }
-            onRetry={blockingError && errors.retryable ? handleResetChat : null}
-            retryLabel="Restart chat"
+        <div className="relative flex-1">
+          <ChatKit
+            key={widgetInstanceKey}
+            control={chatkit.control}
+            className={`${
+              blockingError || isInitializingSession
+                ? "pointer-events-none opacity-0"
+                : "block h-full w-full"
+            } bg-[#15191C] text-[#EDEDED]`}
           />
         </div>
+
+        <ErrorOverlay
+          error={blockingError}
+          fallbackMessage={
+            isInitializingSession
+              ? "Initializing your Mapping My Story session…"
+              : "Something went wrong while loading the chat."
+          }
+        />
       </div>
     </div>
   );
 }
+
 
 function extractErrorDetail(
   payload: Record<string, unknown> | undefined,
