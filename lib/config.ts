@@ -46,22 +46,26 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
   return {
     color: {
       grayscale: {
-        hue: 220,
-        tint: 6,
-        shade: isDark ? -4 : -1,
+        // neutral dark gray, not navy
+        hue: 210,
+        tint: 3,
+        shade: isDark ? -3 : -1,
       },
       accent: {
-        primary: "#D4AF37", // gold
+        // Couple Forward gold
+        primary: "#D4AF37",
         level: 2,
       },
       surface: {
-        foreground: isDark ? "#EAEAEA" : "#1E1E1E",
-        background: isDark ? "#15191C" : "#F9F9F9",
+        // controls panels, message bubbles, composer background
+        background: isDark ? "#15191C" : "#F5F5F5",
+        foreground: isDark ? "#1E2328" : "#FFFFFF",
       },
     },
     radius: "soft",
   };
 };
+
 
 
 
