@@ -362,15 +362,18 @@ export function ChatKitPanel({
           </div>
         </div>
 
-        <div className="relative flex-1">
+       <div className="relative flex-1">
   <ChatKit
     key={widgetInstanceKey}
     control={chatkit.control}
-    className={`block h-full w-full bg-[#15191C] text-[#EDEDED] ${
-      blockingError || isInitializingSession ? "pointer-events-none opacity-0" : ""
-    }`}
+    className={
+      (blockingError || isInitializingSession
+        ? "pointer-events-none opacity-0 "
+        : "block h-full w-full ") + "bg-[#15191C] text-[#EDEDED]"
+    }
   />
 </div>
+
  }
           />
           <ErrorOverlay
