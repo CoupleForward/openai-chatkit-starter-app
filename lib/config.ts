@@ -58,7 +58,7 @@ export const getThemeConfig = (theme: ColorScheme): ThemeOption => {
       surface: {
         // main widget + inner surfaces (chat area, composer, etc.)
         background: isDark ? "#15191C" : "#F9F9F9",
-        foreground: isDark ? "#111418" : "#FFFFFF",
+        foreground: isDark ? "#111418" : "#00FFFF",
       },
     },
     radius: "round",    // rounded but not full pill
